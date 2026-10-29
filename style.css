@@ -1,0 +1,346 @@
+
+:root {
+    --azul: #193366;
+    --azul-escuro: #12264C;
+    --laranja: #FF700D;
+    --branco: #FFFFFF;
+    --cinza-claro: #F3F5F9;
+    --texto: #29354A;
+    --texto-suave: #BFCBE0;
+    --borda: #DFE5EF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica;
+    background-color: var(--azul);
+    color: var(--branco);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.topo {
+    width: 100%;
+    min-height: 82px;
+    padding: 12px 6%;
+    background-color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marca img {
+    display: block;
+    width: 100px;
+    max-height: 68px;
+    height: auto;
+    object-fit: contain;
+}
+
+.identificacao {
+    background-color: var(--laranja);
+    color: var(--branco);
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 55px 24px 0;
+}
+
+.apresentacao {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.etiqueta,
+.subtitulo {
+    display: inline-block;
+    color: var(--laranja);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.etiqueta {
+    border: 1px solid rgba(255, 112, 13, 0.6);
+    border-radius: 30px;
+    padding: 7px 16px;
+    margin-bottom: 22px;
+}
+
+h1 {
+    max-width: 700px;
+    margin: 0 auto 18px;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    color: var(--laranja);
+}
+
+.descricao {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--texto-suave);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.jogo {
+    background-color: var(--branco);
+    color: var(--texto);
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho-jogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.cabecalho-jogo .subtitulo {
+    font-size: 0.7rem;
+    letter-spacing: 1.4px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.3;
+}
+
+.cabecalho-jogo h2 {
+    color: var(--azul);
+    margin-top: 4px;
+}
+
+#instrucoes {
+    color: #657087;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+#grade {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+    max-width: 390px;
+    margin: 24px auto;
+    text-align: center;
+    color: var(--azul);
+}
+
+.celula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    min-width: 0;
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    background-color: var(--cinza-claro);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.celula.selecionada {
+    background-color: var(--azul);
+    border-color: var(--azul);
+    color: var(--branco);
+}
+
+.celula.encontrada {
+    background-color: var(--laranja);
+    border-color: var(--laranja);
+    color: var(--branco);
+}
+
+#mensagem {
+    min-height: 28px;
+    margin: 12px 0 28px;
+    text-align: center;
+    color: var(--azul);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.palavras {
+    border-top: 1px solid var(--borda);
+    padding-top: 22px;
+}
+
+.palavras h3 {
+    color: var(--azul);
+    font-size: 1rem;
+    margin-bottom: 14px;
+}
+
+#lista-palavras {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+#lista-palavras li {
+    padding: 10px 6px;
+    border-radius: 8px;
+    background-color: var(--cinza-claro);
+    color: var(--azul);
+    border: 1px solid var(--borda);
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+#lista-palavras li.encontrada {
+    background-color: #FFF0E5;
+    border-color: var(--laranja);
+    color: #B94C00;
+    text-decoration: line-through;
+}
+
+.botao {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--laranja);
+    color: var(--branco);
+    font-family: helvetica;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+    background-color: #E85F00;
+    transform: translateY(-2px);
+}
+
+.botao:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 4px;
+}
+
+footer {
+    padding: 25px 10px 30px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.8rem;
+}
+
+.creditos span {
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .topo {
+        min-height: 70px;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+    .marca img {
+        width: 76px;
+        max-height: 54px;
+    }
+
+    .identificacao {
+        padding: 8px 11px;
+        font-size: 0.72rem;
+    }
+
+    main {
+        padding: 38px 14px 0;
+    }
+
+    .apresentacao {
+        margin-bottom: 28px;
+    }
+
+    .etiqueta {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    h1 {
+        letter-spacing: -0.8px;
+    }
+
+    .descricao {
+        font-size: 0.95rem;
+    }
+
+    .jogo {
+        padding: 20px 15px;
+        border-radius: 14px;
+    }
+
+    #grade {
+        gap: 3px;
+        margin: 20px auto;
+    }
+
+    .celula {
+        border-radius: 4px;
+        font-size: clamp(0.55rem, 2.5vw, 0.85rem);
+    }
+
+    #lista-palavras {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    #lista-palavras li {
+        font-size: 0.8rem;
+    }
+
+    .botao {
+        max-width: 100%;
+        padding: 13px 17px;
+        font-size: 0.9rem;
+    }
+}
